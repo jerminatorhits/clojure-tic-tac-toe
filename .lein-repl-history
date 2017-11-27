@@ -1,0 +1,25 @@
+*ns*
+exit
+(and (= 1 1) + )
+(and (= 1 1) 1)
+(first [+ 0])
+(+)
+(and + (= 1 1))
+((and + (= 1 1)) 1 2 3)
+(doc +)
+(defn annouce-treasure-location
+[{lat :lat lng :lng}]
+(println (str "Treasure lat: " lat))
+(println (str "Treasure lng: " lng)))
+(annouce-treasure-location {:lat 28.22 :lng 81.33})
+(map (fn [name] (str "Hi, " name))
+["Darth Vader" "Mr.Magoo"])
+(map #(str "Hi, " %)["Darth Vader" "Mr. Magoo"])
+(identity 1)
+(let [x 1] x)
+x
+(println x)
+(+ x 0)
+(let [q 1] q)
+(set [:a :a])
+exit
