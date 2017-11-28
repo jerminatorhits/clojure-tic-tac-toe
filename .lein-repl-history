@@ -52,3 +52,10 @@ exit
    (Integer. (re-find  #"\d+" s )))
 (parse-int "10not123")
 exit
+(parse-number "p")
+exit
+(for [x (range 1 9)])
+(for [x (range 1 9)] [x]))
+(vec (range 1 9))
+(vec (range 1 10))
+exit
