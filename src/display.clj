@@ -11,6 +11,10 @@
         " " (nth board 6) " | " (nth board 7) " | " (nth board 8) " "
         "\n"))
 
+(defn display-text
+  [text]
+  (println text))
+
 (defn display-board
   [board]
-  (println (stringify-board board)))
+  (display-text (stringify-board board)))

@@ -8,7 +8,10 @@
     (is (= (stringify-board (create-board)) "\n 1 | 2 | 3 \n---|---|---\n 4 | 5 | 6 \n---|---|---\n 7 | 8 | 9 \n")))
 
   (testing "prints board out to the console"
-   (is (= (display-board (stringify-board (create-board))) (println (stringify-board (create-board)))))))
+    (is (= (display-text (stringify-board (create-board))) (println (stringify-board (create-board))))))
+  
+  (testing "prints board text to the console"
+    (is (= (display-text "Testing") (println "Testing"))))) 
 
 ;;  (testing "updates board when given a location and mark"
 ;;    (is (= [:X 2 3 4 5 6 7 8 9] (update-board [1 2 3 4 5 6 7 8 9] 0 :X))))
