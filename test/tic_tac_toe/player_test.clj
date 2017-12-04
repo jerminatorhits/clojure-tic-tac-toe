@@ -1,6 +1,6 @@
-(ns player-test
+(ns tic-tac-toe.player-test
   (:require [clojure.test :refer [deftest testing is]]
-            [player :refer :all]))
+            [tic-tac-toe.player :refer :all]))
 
 (deftest player-test
   (testing "creates player with a given token"

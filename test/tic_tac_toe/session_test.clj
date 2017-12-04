@@ -1,7 +1,7 @@
-(ns session-test
+(ns tic-tac-toe.session-test
   (:require [clojure.test :refer [deftest testing is]]
-            [board :refer :all]
-            [session :refer :all]))
+            [tic-tac-toe.board :refer :all]
+            [tic-tac-toe.session :refer :all]))
 
 (deftest session-test
   (testing "prints welcome message upon start"

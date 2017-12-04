@@ -1,7 +1,7 @@
-(ns display-test
+(ns tic-tac-toe.display-test
   (:require [clojure.test :refer [deftest testing is]]
-            [display :refer :all]
-            [board :refer :all]))
+            [tic-tac-toe.display :refer :all]
+            [tic-tac-toe.board :refer :all]))
 
 (deftest display-test
   (testing "makes board into a formatted string"

@@ -1,36 +1,15 @@
-# tic-tac-toe
+# Unbeatable Tic-Tac-Toe in Clojure
 
-FIXME: description
+Clone directory from https://github.com/jerminatorhits/clojure-tic-tac-toe.git
 
-## Installation
+Enter in:
+```
+lein run
+```
 
-Download from http://example.com/FIXME.
+Begin Play
 
-## Usage
-
-FIXME: explanation
-
-    $ java -jar tic-tac-toe-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2017 FIXME
+Copyright © 2017 Jeremy Kwa
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.

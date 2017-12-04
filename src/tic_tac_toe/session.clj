@@ -1,8 +1,7 @@
-(ns session
+(ns tic-tac-toe.session
   (:gen-class)
-    (require [session :refer :all])
-    (require [display :refer :all])
-    (require [board :refer :all]))
+    (require [tic-tac-toe.display :refer :all])
+    (require [tic-tac-toe.board :refer :all]))
 
 (defn session-welcome
   []

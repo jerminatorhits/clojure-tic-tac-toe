@@ -1,5 +1,4 @@
-(ns display
-  (:gen-class))
+(ns tic-tac-toe.display)
 
 (defn stringify-board
   [board]
