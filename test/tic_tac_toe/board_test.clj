@@ -1,6 +1,6 @@
-(ns board-test
+(ns tic-tac-toe.board-test
   (:require [clojure.test :refer [deftest testing is]]
-            [board :refer :all]))
+            [tic-tac-toe.board :refer :all]))
 
 (deftest board-test
   (testing "creates a fresh board"

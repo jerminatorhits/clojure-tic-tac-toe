@@ -1,4 +1,4 @@
-(ns board
+(ns tic-tac-toe.board
   (:gen-class))
 
 (defn create-board 

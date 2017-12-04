@@ -1,0 +1,5 @@
+.DS_Store
+.git
+.gitignore.swo
+.lein-failures
+.lein-repl-history

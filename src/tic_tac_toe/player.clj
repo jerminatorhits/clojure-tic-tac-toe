@@ -1,4 +1,4 @@
-(ns player
+(ns tic-tac-toe.player
   (:gen-class))
 
 (defn create-player
