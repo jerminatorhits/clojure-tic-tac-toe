@@ -5,30 +5,27 @@
 
 (defn session-welcome
   []
-  "Welcome to Tic-Tac-Toe! You will be 'X' and the computer will be 'O'\nThe spaces available are labeled 1 through 9.")
+  "\nWelcome to Tic-Tac-Toe! You will be 'X' and the computer will be 'O'\nThe spaces available are labeled 1 through 9.")
 
-(defn numeric? [s]
-  (if-let [s (seq s)]
-    (let [s (if (= (first s) \-) (next s) s)
-          s (drop-while #(Character/isDigit %) s)
-          s (if (= (first s) \.) (next s) s)
-          s (drop-while #(Character/isDigit %) s)]
-      (empty? s))))
+(defn validate-entry
+  [entry]
+  (and (number? entry) (and (>= entry 1) (<= entry 9))))
 
-(defn parse-int [s]
-   (Integer. (re-find  #"\d+" s )))
+(defn String->Number [str]
+  (let [n (read-string str)]
+       (if (number? n) n nil)))
 
 (defn session-prompt
   [msg]
   (display-text msg)
-  (let [input (read-line)]
-  (if (and (numeric? input) (and (>= (parse-int input) 1) (<= (parse-int input) 9)))
-    (- (parse-int input) 1)
+  (let [input (String->Number (read-line))]
+  (if (validate-entry input)
+    (- input 1)
     (recur "Invalid Input. Please enter a valid move: "))))
 
 (defn session-run
   []
-  (println (session-welcome))
+  (display-text (session-welcome))
   (let [current-board (create-board)]
   (display-board current-board)
   (display-board (update-board current-board (session-prompt "Enter the space you wish to mark: ") "X"))))

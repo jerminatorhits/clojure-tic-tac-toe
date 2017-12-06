@@ -10,4 +10,15 @@
       (= (count (distinct (subvec board 6 9))) 1))
     true
   false))
+
+(defn vertical-win
+  [board]
+  (if (or 
+      (= (count (distinct (take-nth 3 board))) 1)
+      (= (count (distinct (take-nth 3 (drop 1 board)))) 1)
+      (= (count (distinct (take-nth 3 (drop 2 board)))) 1))
+    true
+  false))
+
+
     
