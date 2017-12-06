@@ -5,7 +5,7 @@
 
 (deftest display-test
   (testing "makes board into a formatted string"
-    (is (= (stringify-board (create-board)) "\n 1 | 2 | 3 \n---|---|---\n 4 | 5 | 6 \n---|---|---\n 7 | 8 | 9 \n")))
+    (is (= (stringify-board (create-board)) "\n 1 | 2 | 3 \n---|---|---\n 4 | 5 | 6 \n---|---|---\n 7 | 8 | 9 \n\n")))
 
   (testing "prints board out to the console"
     (is (= (display-text (stringify-board (create-board))) (println (stringify-board (create-board))))))

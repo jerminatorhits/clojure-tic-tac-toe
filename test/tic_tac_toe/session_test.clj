@@ -7,6 +7,18 @@
   (testing "prints welcome message upon start"
     (is (session-welcome) "Welcome to Tic-Tac-Toe! You will be 'X' and the computer will be 'O'\nThe spaces available are labeled 1 through 9. Enter the space you wish to mark."))
   
+  (testing "validates input from player correctly"
+    (is (= (validate-entry 1) true)))
+  
+  (testing "validates input from player correctly"
+    (is (= (validate-entry 0) false)))
+  
+  (testing "validates input from player correctly"
+    (is (= (validate-entry -1) false)))
+  
+  (testing "validates input from player correctly"
+    (is (= (validate-entry "a") false)))
+  
   (testing "prompts player for a valid move at the beginning of the turn"
     (is (with-in-str "1" (session-prompt "Enter the space you wish to mark: ")) 0))
 
