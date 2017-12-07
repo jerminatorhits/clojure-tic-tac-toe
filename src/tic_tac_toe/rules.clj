@@ -20,5 +20,18 @@
     true
   false))
 
+(defn diagonal-win
+  [board]
+  (= (nth board 0) (nth board 4) (nth board 8)))
 
-    
+(defn antidiagonal-win
+  [board]
+  (= (nth board 2) (nth board 4) (nth board 6)))
+
+(defn winner?
+  [board]
+  (or (horizontal-win board) (vertical-win board) (diagonal-win board) (antidiagonal-win board)))
+
+(defn tie?
+  [board]
+  (and (false? (winner? board)) (true? (nil? (some number? board)))))

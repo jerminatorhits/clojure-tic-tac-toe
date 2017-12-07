@@ -14,4 +14,25 @@
     (is (= (vertical-win ["X" 2 3 "X" 5 6 "X" 8 9]) true)))
   
   (testing "returns false if given no vertical win"
-    (is (= (vertical-win [1 "X" 3 "X" 5 6 "X" 8 9]) false))))
+    (is (= (vertical-win [1 "X" 3 "X" 5 6 "X" 8 9]) false)))
+  
+  (testing "returns true if diagonal win exists"
+    (is (= (diagonal-win ["X" 2 3 4 "X" 6 7 8 "X"]) true)))
+  
+  (testing "returns false if diagonal win doesn't exist"
+    (is (= (diagonal-win [1 "X" 3 4 "X" 6 7 8 "X"]) false)))
+  
+  (testing "returns true if antidiagonal win exists"
+    (is (= (antidiagonal-win [1 2 "X" 4 "X" 6 "X" 8 9]) true)))
+  
+  (testing "returns true if antidiagonal win doesn't exist"
+    (is (= (antidiagonal-win [1 "X" 3 4 "X" 6 "X" 8 9]) false)))
+  
+  (testing "returns true if winner exists"
+    (is (= (winner? ["X" "O" "O" "O" "X" "X" "X" "O" "X"]) true)))
+  
+  (testing "returns true if tie exists"
+    (is (= (tie? ["X" "O" "O" "O" "X" "X" "X" "X" "O"]) true)))
+  
+  (testing "returns true if tie exists"
+    (is (= (tie? ["X" "X" "X" "O" "O" "X" "X" "O" "O"]) false))))
