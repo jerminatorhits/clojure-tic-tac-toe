@@ -34,5 +34,5 @@
   (testing "returns true if tie exists"
     (is (= (tie? ["X" "O" "O" "O" "X" "X" "X" "X" "O"]) true)))
   
-  (testing "returns true if tie exists"
+  (testing "returns false if tie doesn't exist"
     (is (= (tie? ["X" "X" "X" "O" "O" "X" "X" "O" "O"]) false))))

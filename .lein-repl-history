@@ -212,3 +212,15 @@ board
 (winner? board)
 (true? (some number? board))
 (some number? board)
+exit
+(let [current-board [] human "X" computer "O" current-player human])
+(let [current-board [] human "X" computer "O" current-player human]
+(= huamn current-player))
+(= human current-player))
+(let [current-board [] human "X" computer "O" current-player human]
+(= human current-player))
+(let [current-board [] human "X" computer "O" current-player human]
+(= computer current-player))
+(nth [1 2 3] 1)
+(string? "X")
+(string? (nth [1 2 3 4 5 6 7 8 9] 1))

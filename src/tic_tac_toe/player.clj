@@ -8,3 +8,7 @@
 (defn provide-move
   [number]
   number)
+
+(defn random-move
+  []
+  (+ (rand-int 8) 1))

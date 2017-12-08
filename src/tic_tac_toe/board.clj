@@ -7,4 +7,4 @@
 
 (defn update-board
   [board location mark]
-  (assoc board location mark))
+  (assoc board (- location 1) mark))
