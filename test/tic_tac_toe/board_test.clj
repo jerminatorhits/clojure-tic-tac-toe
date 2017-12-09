@@ -8,6 +8,3 @@
 
   (testing "updates board when given a location and mark"
     (is (= ["X" 2 3 4 5 6 7 8 9] (update-board [1 2 3 4 5 6 7 8 9] 1 "X")))))
-
-;;  (testing "formats board into presentable string when given a board"
-;;    (is (= (format-board [1 2 3 4 5 6 7 8 9]) "\n 1 | 2 | 3 \n---|---|---\n 4 | 5 | 6 \n---|---|---\n 7 | 8 | 9 \n")))
