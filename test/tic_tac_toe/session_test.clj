@@ -24,12 +24,3 @@
 
   (testing "prompts player for a valid move if invalid move is provided"
     (is (with-in-str "p\n1" (session-turn [1 2 3 4 5 6 7 8 9] "X")) ["X" 2 3 4 5 6 7 8 9])))
-  
-  ;(testing "processes a turn correctly"
-  ;  (is (= (turn player [1 2 3 4 5 6 7 8 9]) ["X" 2 3 4 5 6 7 8 9]  ))))
-  
-  ;(testing "game-loop can run one cycle"
-  ;  (let [current-board (create-board) human (create-player "X") computer (create-player "O") turn human]
-  ;    ()
-  ;  (is (= (game-loop current-board human computer turn)))))
-  ;)

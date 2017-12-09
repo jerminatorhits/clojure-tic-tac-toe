@@ -224,3 +224,28 @@ exit
 (nth [1 2 3] 1)
 (string? "X")
 (string? (nth [1 2 3 4 5 6 7 8 9] 1))
+(def human-player "X")
+(def computer-player "O")
+(defn switch-player
+  [current-player]
+  (if (= current-player human-player)
+    computer-player)
+  (if (= current-player computer-player)
+    human-player)
+)  
+(switch-player human-player)
+(switch-player computer-player)
+human-player
+current-player
+(switch-player human-player)
+(defn switch-player1
+[current-player]
+(println current-player)
+(println (= current-player human-player))
+)
+(switch-player1 human-player)
+(switch-player human-player)
+computer-player
+(defn random-move
+  []
+  (+ (rand-int 8) 1))
