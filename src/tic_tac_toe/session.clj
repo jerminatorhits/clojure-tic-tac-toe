@@ -2,7 +2,7 @@
   (:require [tic-tac-toe.display :refer :all]
             [tic-tac-toe.board :refer :all]
             [tic-tac-toe.player :refer :all]
-            [tic-tac-toe.rules :refer :all]
+            [tic-tac-toe.rules :as rules]
             [tic-tac-toe.messages :refer :all]))
 
 (defn validate-integer [entry]
@@ -37,9 +37,9 @@
   (loop [board (create-board) current-player human-player]
     (display-board board)
     (cond
-      (tie? board) (display-text tie-message)
-      (winner? board) (display-text winner-message))
-    (when (false? (game-over? board))
+      (rules/tie? board) (display-text tie-message)
+      (rules/winner? board) (display-text winner-message))
+    (when (false? (rules/game-over? board))
       (if (= human-player current-player)
         (display-text human-turn-message)
         (display-text computer-turn-message))
