@@ -249,3 +249,13 @@ computer-player
 (defn random-move
   []
   (+ (rand-int 8) 1))
+(nth [1 2 3 4 5] 3)
+(nth [1 2 3 4 5] 0)
+(nil? "X")
+(or "X" nil false)
+(or nil nil)
+(or nil false)
+(some? "X")
+(some? nil)
+(some? nil nil)
+exit

@@ -38,7 +38,7 @@
     (display-board board)
     (cond
       (rules/tie? board) (display-text tie-message)
-      (rules/winner? board) (display-text winner-message))
+      (rules/winner board) (display-text winner-message))
     (when (false? (rules/game-over? board))
       (if (= human-player current-player)
         (display-text human-turn-message)

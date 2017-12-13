@@ -5,49 +5,55 @@
 
 (deftest rules-test
   (testing "returns token if given 3 in a row horizontally"
-    (is (= (horizontal-win ["X" "X" "X" 4 5 6 7 8 9] "X") "X")))
+    (is (= (horizontal-win ["X" "X" "X" 4 5 6 7 8 9]) "X")))
   
   (testing "returns token if given 3 in a row horizontally"
-    (is (= (horizontal-win [1 2 3 "X" "X" "X" 7 8 9] "X") "X")))
+    (is (= (horizontal-win [1 2 3 "X" "X" "X" 7 8 9]) "X")))
   
   (testing "returns token if given 3 in a row horizontally"
-    (is (= (horizontal-win [1 2 3 4 5 6 "O" "O" "O"] "O") "O")))
+    (is (= (horizontal-win [1 2 3 4 5 6 "O" "O" "O"]) "O")))
 
   (testing "returns token if given no horizontal win"
-    (is (= (horizontal-win [1 "X" "X" "X" 5 6 7 8 9] "X") nil)))
+    (is (= (horizontal-win [1 "X" "X" "X" 5 6 7 8 9]) nil)))
   
   (testing "returns token if given 3 in a row vertically"
-    (is (= (vertical-win ["X" 2 3 "X" 5 6 "X" 8 9] "X") "X")))
+    (is (= (vertical-win ["X" 2 3 "X" 5 6 "X" 8 9]) "X")))
   
   (testing "returns true if given 3 in a row vertically"
-    (is (= (vertical-win [1 "O" 3 4 "O" 6 7 "O" 9] "O") "O")))
+    (is (= (vertical-win [1 "O" 3 4 "O" 6 7 "O" 9]) "O")))
   
   (testing "returns true if given 3 in a row vertically"
-    (is (= (vertical-win [1 2 "X" 4 5 "X" 7 8 "X"] "X") "X")))
+    (is (= (vertical-win [1 2 "X" 4 5 "X" 7 8 "X"]) "X")))
   
   (testing "returns false if given no vertical win"
-    (is (= (vertical-win [1 "X" 3 "X" 5 6 "X" 8 9] "X") nil)))
+    (is (= (vertical-win [1 "X" 3 "X" 5 6 "X" 8 9]) nil)))
   
   (testing "returns true if diagonal win exists"
-    (is (= (diagonal-win ["X" 2 3 4 "X" 6 7 8 "X"] "X") "X")))
+    (is (= (diagonal-win ["X" 2 3 4 "X" 6 7 8 "X"]) "X")))
   
   (testing "returns false if diagonal win doesn't exist"
-    (is (= (diagonal-win [1 "O" 3 4 "O" 6 7 8 "O"] "O") nil)))
+    (is (= (diagonal-win [1 "O" 3 4 "O" 6 7 8 "O"]) nil)))
   
   (testing "returns true if antidiagonal win exists"
-    (is (= (antidiagonal-win [1 2 "O" 4 "O" 6 "O" 8 9] "O") "O")))
+    (is (= (antidiagonal-win [1 2 "O" 4 "O" 6 "O" 8 9]) "O")))
   
   (testing "returns true if antidiagonal win doesn't exist"
-    (is (= (antidiagonal-win [1 "X" 3 4 "X" 6 "X" 8 9] "X") nil)))
+    (is (= (antidiagonal-win [1 "X" 3 4 "X" 6 "X" 8 9]) nil)))
   
   (testing "returns true if winner exists"
-    (is (= (winner? ["X" "O" "O" "O" "X" "X" "X" "O" "X"] "X") "X")))
+    (is (= (winner ["X" "O" "O" "O" "X" "X" "X" "O" "X"]) "X")))
   
   (testing "returns true if winner exists"
-    (is (= (winner? ["O" "X" "O" "O" "X" "X" "X" "O" "X"] "O") false)))
+   (is (= (winner ["O" "X" "O" "O" "X" "X" "X" "O" "X"]) nil)))
   
   (testing "returns true if tie exists"
-    (is (= (tie? ["X" "O" "O" "O" "X" "X" "X" "X" "O"] "X") true)))
+    (is (= (tie? ["X" "O" "O" "O" "X" "X" "X" "X" "O"]) true)))
   
   (testing "returns false if tie doesn't exist"
-    (is (= (tie? ["X" "X" "X" "O" "O" "X" "X" "O" "O"] "X") false))))
+    (is (= (tie? ["X" "X" "X" "O" "O" "X" "X" "O" "O"]) false)))
+  
+  (testing "returns true if game is over"
+    (is (= (game-over? ["X" "X" "X" "O" "O" "X" "X" "O" "O"]) true)))
+  
+  (testing "returns false if game is over"
+    (is (= (game-over? ["X" "X" "O" "O" 5 "X" "X" "O" "O"]) false))))
