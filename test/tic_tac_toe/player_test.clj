@@ -2,13 +2,7 @@
   (:require [clojure.test :refer [deftest testing is]]
             [tic-tac-toe.player :refer :all]))
 
-(deftest player-test
-  ;(testing "creates player with a given token"
-  ;  (is (= (create-player "X") "X")))
-  
-  ;(testing "provides location of move"
-  ;  (is (= (provide-move 3) 3)))
-  
+(deftest player-test  
   (testing "provide random move"
     (is (= (contains? [1 2 3 4 5 6 7 8 9] (random-move)) true)))
   

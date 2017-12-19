@@ -1,9 +1,10 @@
 (ns tic-tac-toe.session
-  (:require [tic-tac-toe.display :refer :all]
-            [tic-tac-toe.board :refer :all]
-            [tic-tac-toe.player :refer :all]
+  (:require [tic-tac-toe.display :as display]
+            [tic-tac-toe.board :as board]
+            [tic-tac-toe.player :as player]
             [tic-tac-toe.rules :as rules]
-            [tic-tac-toe.messages :refer :all]))
+            [tic-tac-toe.minimax :as minimax]
+            [tic-tac-toe.messages :as messages]))
 
 (defn validate-integer [entry]
   (and (number? entry) (>= entry 1) (<= entry 9)))
@@ -23,25 +24,25 @@
   (if (= current-player "X")
     (let [move (String->Number (read-line))]
     (if (false? (valid-move? board move))
-      (display-text invalid-message))
+      (display/display-text messages/invalid))
     (if (valid-move? board move)
-      (update-board board move current-player)
+      (board/update-board board move current-player)
     (recur board current-player)))
-  (let [move (random-move)]
+  (let [move (minimax/best-move board)]
     (if (valid-move? board move)
-      (update-board board move current-player)
+      (board/update-board board move current-player)
     (recur board current-player)))))
   
 (defn session-run []
-  (display-text welcome-message)
-  (loop [board (create-board) current-player human-player]
-    (display-board board)
+  (display/display-text messages/welcome)
+  (loop [board (board/create-board) current-player player/human-player]
+    (display/display-board board)
     (cond
-      (rules/tie? board) (display-text tie-message)
-      (rules/winner board) (display-text winner-message))
+      (rules/tie? board) (display/display-text messages/tie)
+      (rules/winner board) (display/display-text messages/winner))
     (when (false? (rules/game-over? board))
-      (if (= human-player current-player)
-        (display-text human-turn-message)
-        (display-text computer-turn-message))
-      (display-text "\n"))
-    (recur (session-turn board current-player) (switch-player current-player))))
+      (if (= player/human-player current-player)
+        (display/display-text messages/human-turn)
+        (display/display-text messages/computer-turn))
+      (display/display-text "\n"))
+    (recur (session-turn board current-player) (player/switch-player current-player))))

@@ -1,5 +1,4 @@
-(ns tic-tac-toe.rules
-    (require [tic-tac-toe.board :refer :all]))
+(ns tic-tac-toe.rules)
 
 (defn horizontal-win [board]
   (cond

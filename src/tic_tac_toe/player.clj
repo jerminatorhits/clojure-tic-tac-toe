@@ -9,5 +9,4 @@
 (defn switch-player [current-player]
   (cond
     (= current-player human-player) computer-player
-    (= current-player computer-player) human-player
-    ))
+    (= current-player computer-player) human-player))

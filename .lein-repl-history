@@ -246,16 +246,100 @@ current-player
 (switch-player1 human-player)
 (switch-player human-player)
 computer-player
-(defn random-move
-  []
-  (+ (rand-int 8) 1))
-(nth [1 2 3 4 5] 3)
-(nth [1 2 3 4 5] 0)
-(nil? "X")
-(or "X" nil false)
-(or nil nil)
-(or nil false)
-(some? "X")
-(some? nil)
-(some? nil nil)
+(def board [1 2 3 4 5 6 7 8 9])
+(for [x [1 2 3 4 5 6 7 8 9]
+(println x))
+]
+(for [x [1 2 3 4 5 6 7 8 9]
+(println x)])
+(for [x [0 1 2 3 4 5]
+      :let [y (* x 3)]
+      :when (even? y)]
+  y)
+(for [:let [x (println board)]
+)
+(defn best-move [board]
+  (for [x board
+    :let [y (* x 3)]
+    :when (even? y)]
+  y))
+(best-move [1 2 3 4 5 6 7 8 9])
+(defn best-move [board]
+  (for [x board
+    :let [y x]
+    :when (int? y)]
+  y))
+(defn best-move [board]
+  (for [x board
+    :let [y x]
+    :when (int? x)]
+  x))
+(int? 1)
 exit
+(int? 42)
+(integer? 42)
+(defn best-move [board]
+  (for [x board
+    :let [y x]
+    :when (integer? y)]
+  y))
+(best-move [1 2 3 4 5 6 7 8 9])
+(defn available-spaces [board]
+  (for [x board
+    :when (integer? x)]
+  x))
+(available-spaces [1 2 "X" 4 "O" 6 7 8 9])
+(type (available-spaces [1 2 "X" 4 "O" 6 7 8 9]))
+(map first (tree-seq next rest '(:A (:B (:D) (:E)) (:C (:F)))))
+'(:A (:B (:D) (:E)) (:C (:F)))
+(tree-seq seq? identity '((1 2 (3)) (4)))
+(get (frequencies [1 2 3]) "X")
+(< nil nil)
+(doseq [i [0 1 2 3]] (type i))
+(doseq [i [0 1 2 3]] (println (type i)))
+(rest [1 2])
+(rest [2])
+(rest [])
+(< 1 nil)
+(max 1 nil)
+(type '(1 2 3))
+(type (1 2 3))
+exit
+#{
+                            ["X" "X" "O" 
+                             "O" "O"  6 
+                              7   8  "X"]
+                            ["X" "X" "O" 
+                              5  "O" "O" 
+                              7   8  "X"]
+                            10
+                            ["X" "X" "O" 
+                              5  "O"  6 
+                              7  "O" "X"]}
+(type (
+                            ["X" "X" "O" 
+                             "O" "O"  6 
+                              7   8  "X"]
+                            ["X" "X" "O" 
+                              5  "O" "O" 
+                              7   8  "X"]
+                            10
+                            ["X" "X" "O" 
+                              5  "O"  6 
+                              7  "O" "X"]))
+(type ([1 2] [3 5] 10))
+(type '([1 2] [3 5] 10))
+(max (19 9))
+(max (10 0))
+(max [10 0])
+exit
+(apply max {1 2 4 0 a d})
+(apply max {1 2 4 0 [1 7]})
+(apply max [1 2 4 0 7])
+(apply max [7])
+(apply max [])
+(apply max [1])
+(apply max {1})
+(apply max [1])
+(apply max [1 2 4 0 7])
+(apply max [])
