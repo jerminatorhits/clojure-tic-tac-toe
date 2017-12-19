@@ -1,12 +1,12 @@
 (ns tic-tac-toe.player)
 
-(def human-player "X")
-(def computer-player "O")
+(def human "X")
+(def computer "O")
 
 (defn random-move []
   (+ (rand-int 8) 1))
 
-(defn switch-player [current-player]
+(defn switch [current-player]
   (cond
-    (= current-player human-player) computer-player
-    (= current-player computer-player) human-player))
+    (= current-player human) computer
+    (= current-player computer) human))

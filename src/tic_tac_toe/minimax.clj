@@ -1,12 +1,12 @@
 (ns tic-tac-toe.minimax
   (:require [tic-tac-toe.board :as board]
             [tic-tac-toe.rules :as rules]
-            [tic-tac-toe.player :refer :all]))
+            [tic-tac-toe.player :as player]))
 
 (defn score [token]
   (cond
-    (= token "O") 10
-    (= token "X") -10
+    (= token player/computer) 10
+    (= token player/human) -10
     :else 0))
 
 (defn score-board [board]
@@ -26,7 +26,7 @@
       (conj result (board/update-board board (first move) (board/turn board)))) result)))
 
 (defn max-or-min [board scores]
-  (if (= (board/turn board) "X")
+  (if (= (board/turn board) player/human)
     (apply min scores)
     (apply max scores)))
 
@@ -50,6 +50,9 @@
                (rest boards)
                (assoc result (first spaces) (evaluator (first boards))))
              (key (apply max-key val result)))))
+
+(def minimax-fast
+  (memoize (fn [n] (best-move n))))
 
 ; (defn modified-result [board]
 ;   (loop [term (next-boards board)

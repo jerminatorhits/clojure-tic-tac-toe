@@ -16,9 +16,6 @@
   (testing "validates input from player correctly"
     (is (= (validate-integer "a") false)))
   
-  (testing "checks to see if position is already taken"
-    (is (= (empty-space? ["X" 2 3 4 5 6 7 8 9] 1) false)))
-  
   (testing "prompts player for a valid move at the beginning of the turn"
     (is (with-in-str "1" (session-turn [1 2 3 4 5 6 7 8 9] "X")) ["X" 2 3 4 5 6 7 8 9]))
 

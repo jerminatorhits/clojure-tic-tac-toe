@@ -55,18 +55,12 @@
                         4  "O" "O" 
                        "X"  8  "X"]) 4)))
   
-  (testing "returns best move using ultimate-ending score -- continues placing moves on board until game is over"
-    (is (= (best-move  [1  "X" "O" 
-                        4  "O"  6 
-                       "X" "O" "X"]) 6)))
-  
   (testing "returns max score given a vector of scores"
     (is (= (max-or-min ["X" "X" "O"
-                  "O" "O" "X"
-                   7   8  "X"] [10 0 1]) 10)))
+                        "O" "O" "X"
+                         7   8  "X"] [10 0 1]) 10)))
   
-  
-  (testing "returns max score when it is computer turn"
+  (testing "returns max score when it is computer's turn"
     (is (= (evaluator ["X" "X" "O"
                        "O" "O" "X"
                         7   8  "X"]) 10))))

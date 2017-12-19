@@ -8,5 +8,8 @@
   (let [occurences (frequencies board)]
         (if (= (get occurences "X") (get occurences "O")) "X" "O")))
 
-(defn update-board [board location mark]
-  (assoc board (- location 1) mark))
+(defn empty-space? [board move]
+  (number? (nth board (- move 1))))
+
+(defn update-board [board move mark]
+  (assoc board (- move 1) mark))

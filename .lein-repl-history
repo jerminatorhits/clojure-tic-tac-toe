@@ -343,3 +343,10 @@ exit
 (apply max [1])
 (apply max [1 2 4 0 7])
 (apply max [])
+(defn validate-integer [entry]
+  (and (number? entry) (>= entry 1) (<= entry 9)))
+(validate-integer "")
+(validate-integer " ")
+(validate-integer "1")
+(validate-integer 1)
+exit
