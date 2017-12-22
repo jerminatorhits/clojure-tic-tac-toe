@@ -55,4 +55,7 @@
     (is (= (game-over? ["X" "X" "X" "O" "O" "X" "X" "O" "O"]) true)))
   
   (testing "returns false if game is over"
-    (is (= (game-over? ["X" "X" "O" "O" 5 "X" "X" "O" "O"]) false))))
+    (is (= (game-over? ["X" "X" "O" "O" 5 "X" "X" "O" "O"]) false)))
+  
+  (testing "determines whose turn it is currently"
+    (is (= (turn [1 2 3 4 5 6 7 8 9]) "X"))))

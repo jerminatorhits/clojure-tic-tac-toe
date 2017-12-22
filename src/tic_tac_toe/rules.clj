@@ -26,3 +26,7 @@
 
 (defn game-over? [board]
   (or (some? (winner board)) (tie? board)))
+
+(defn turn [board]
+  (let [occurences (frequencies board)]
+        (if (= (get occurences "X") (get occurences "O")) "X" "O")))

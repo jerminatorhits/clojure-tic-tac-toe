@@ -5,9 +5,6 @@
 (deftest board-test
   (testing "creates a fresh board"
     (is (= [1 2 3 4 5 6 7 8 9] (create-board))))
-  
-  (testing "determines whose turn it is currently"
-    (is (= (turn [1 2 3 4 5 6 7 8 9]) "X")))
 
   (testing "checks to see if position is already taken"
     (is (= (empty-space? ["X" 2 3 4 5 6 7 8 9] 1) false)))

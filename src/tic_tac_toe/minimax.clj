@@ -23,10 +23,10 @@
     (if (not-empty move)
     (recur
       (rest move)
-      (conj result (board/update-board board (first move) (board/turn board)))) result)))
+      (conj result (board/update-board board (first move) (rules/turn board)))) result)))
 
 (defn max-or-min [board scores]
-  (if (= (board/turn board) player/human)
+  (if (= (rules/turn board) player/human)
     (apply min scores)
     (apply max scores)))
 
