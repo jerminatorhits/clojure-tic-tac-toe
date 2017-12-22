@@ -1,0 +1,61 @@
+*ns*
+exit
+(and (= 1 1) + )
+(and (= 1 1) 1)
+(first [+ 0])
+(+)
+(and + (= 1 1))
+((and + (= 1 1)) 1 2 3)
+(doc +)
+(defn annouce-treasure-location
+[{lat :lat lng :lng}]
+(println (str "Treasure lat: " lat))
+(println (str "Treasure lng: " lng)))
+(annouce-treasure-location {:lat 28.22 :lng 81.33})
+(map (fn [name] (str "Hi, " name))
+["Darth Vader" "Mr.Magoo"])
+(map #(str "Hi, " %)["Darth Vader" "Mr. Magoo"])
+(identity 1)
+(let [x 1] x)
+x
+(println x)
+(+ x 0)
+(let [q 1] q)
+(set [:a :a])
+exit
+"1 | 2 | 3\n4 | 5 | 6\n7 | 8 | 9"
+println "1 | 2 | 3\n4 | 5 | 6\n7 | 8 | 9"
+(println "1 | 2 | 3\n4 | 5 | 6\n7 | 8 | 9")
+(println " 1 | 2 | 3 \n-----------\n 4 | 5 | 6 \n-----------\n 7 | 8 | 9 ")
+(println " 1 | 2 | 3 \n---|---|---\n 4 | 5 | 6 \n-----------\n 7 | 8 | 9 ")
+" 1 | 2 | 3 \n---|---|---\n 4 | 5 | 6 \n---|---|---\n 7 | 8 | 9 "
+(println " 1 | 2 | 3 \n---|---|---\n 4 | 5 | 6 \n---|---|---\n 7 | 8 | 9 ")
+exit
+board = [1 2 3 4 5 6 7 8 9]
+(println board)
+(println [1 2 3 4 5 6 7 8 9][0])
+(def board [1 2 3 4 5 6 7 8 9])
+(println board[0])
+(println board)
+(println (nth board 0))
+(println board)
+exit
+(println (read-line))
+exit
+(parse-int "10not123")
+(defn parse-int [s]
+   (Integer. (re-find  #"\d+" s )))
+(defn parse-int [s]
+(
+)
+(defn parse-int [s]
+   (Integer. (re-find  #"\d+" s )))
+(parse-int "10not123")
+exit
+(parse-number "p")
+exit
+(for [x (range 1 9)])
+(for [x (range 1 9)] [x]))
+(vec (range 1 9))
+(vec (range 1 10))
+exit
