@@ -1,0 +1,6 @@
+.DS_Store
+.git
+.gitignore.swo
+.lein-failures
+.lein-repl-history
+target/default+test+test/classes/META-INF/maven/tic-tac-toe/tic-tac-toe/pom.properties
