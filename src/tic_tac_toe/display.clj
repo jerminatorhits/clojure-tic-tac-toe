@@ -1,5 +1,4 @@
-(ns display
-  (:gen-class))
+(ns tic-tac-toe.display)
 
 (defn stringify-board
   [board]
@@ -9,12 +8,13 @@
         " " (nth board 3) " | " (nth board 4) " | " (nth board 5) " " 
         "\n---|---|---\n" 
         " " (nth board 6) " | " (nth board 7) " | " (nth board 8) " "
-        "\n"))
+        "\n\n"))
 
-(defn display-text
+(defn text
   [text]
-  (println text))
+  (print text)
+  (flush))
 
-(defn display-board
+(defn board
   [board]
-  (display-text (stringify-board board)))
+  (text (stringify-board board)))
